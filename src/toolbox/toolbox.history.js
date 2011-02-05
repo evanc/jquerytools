@@ -32,6 +32,11 @@
 					setInterval(function() {
 						var idoc = iframe.contentWindow.document, 
 							 h = idoc.location.hash;
+
+						if (location.hash !== h) {
+							 h = location.hash;
+							 setIframeLocation(h);
+						}
 					
 						if (hash !== h) {						
 							$.event.trigger("hash", h);
